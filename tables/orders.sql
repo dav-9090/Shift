@@ -5,12 +5,9 @@ create table if not exists shop.orders
 			primary key,
 	total_amount money not null,
 	date timestamp not null,
-	shop_id integer
-		constraint orders_shops_fk
-			references shop.shops,
+	shop_id integer,
 	employee_id integer
-		constraint orders_employees_fk
-			references shop.employees
+		
 );
 
 alter table shop.orders owner to postgres;

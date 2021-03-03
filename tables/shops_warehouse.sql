@@ -4,12 +4,9 @@ create table if not exists shop.shops_warehouse
 		constraint shops_warehouse_pk
 			primary key,
 	quantity double precision,
-	shop_id integer
-		constraint shops_warehouse_shops_fk
-			references shop.shops,
+	shop_id integer,
 	product_id integer
-		constraint shops_warehouse_products_fk
-			references shop.products
+		
 );
 
 alter table shop.shops_warehouse owner to postgres;
